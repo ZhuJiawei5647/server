@@ -1,0 +1,19 @@
+{
+	"onenet": {
+		"masterKey": "BQ1Ny=0txRk7jIZk2JayUAt5TzA=",
+		"registerCode": "U3fAW9j2UWJSFj5U",
+		"token": "eeeevvvvtttt",
+		"encodingAESKey": "VlRJY05EVTJOc2d4TWpNME5UWTJPREV5TXpRNU5qYzQ"
+	},
+	"wxapp": {
+		"appid": "wxaa0a85c257b1f69c",
+		"secret": "d4ec166fab10021871240ddece575feb",
+		"mchkey": "LHCD54YLW9LJ8SY5X6GS0ZJSW906mFc3",
+		"mchid": "1501684471"
+	},
+	"wxiphapp": {
+		"appid": "wx9ceed7678d79c5d4",
+		"mchkey": "LHCD54YLW9LJ8SY5X6GS0ZJSW906mFc3",
+		"mchid": "1501684471"
+	}
+}

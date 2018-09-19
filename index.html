@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>金额充值</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript" src="/api/carpole/pages/comm/libs/Md5.js"></script>
+</head>
+<body>
+	<div style="max-width: 1000px; margin: 20px auto; text-align: center;">
+		<button class="login">登入</button>
+		<input type="text" name="money">
+		<button class="charge">充值</button>
+	</div>
+</body>
+<script type="text/javascript">
+	// $('.login').on('click', function () {
+	// 	console.log('login')
+	// 	$.post('/api/carpole/login!doLogin.action', {
+	// 		userId:'admin',
+	// 		passWord:hex_md5('Sowei123@2016'),
+	// 		accType:1
+	// 	}, function (data) {
+	// 		console.log(data)
+	// 	})
+	// })
+	Date.prototype.format = function(format)
+	{
+	 var o = {
+	 "M+" : this.getMonth()+1, //month
+	 "d+" : this.getDate(),    //day
+	 "h+" : this.getHours(),   //hour
+	 "m+" : this.getMinutes(), //minute
+	 "s+" : this.getSeconds(), //second
+	 "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+	 "S" : this.getMilliseconds() //millisecond
+	 }
+	 if(/(y+)/.test(format)) format=format.replace(RegExp.$1,
+	 (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+	 for(var k in o)if(new RegExp("("+ k +")").test(format))
+	 format = format.replace(RegExp.$1,
+	 RegExp.$1.length==1 ? o[k] :
+	 ("00"+ o[k]).substr((""+ o[k]).length));
+	 return format;
+	}
+	$('.charge').on('click', function () {
+		var time = new Date().getTime(),
+			date = new Date(time + 8 * 60 * 60);
+		// $.post('/api/carpole/cardRecharge!saveCardRechargeInfoZgy.action?_dc=' + new Date().getTime(), {
+		// 	cardNo:'3050120160821006',
+		// 	orderAmount:$('input').val(),
+		// 	accId:'3070120160906001',
+		// 	preAmount:47.74,
+		// 	rechargeDate:date.format('yy-MM-ddThh:mm:ss'),
+		// 	page:1,
+		// 	start:0,
+		// 	limit:25
+		// }, function (data) {
+		// 	console.log(data)
+		// })
+		$.post('/api/pillarsystem_test/system/depositeAction_depositen.do', {
+			cardNo:'3050120160821006',
+			orderAmount:$('input').val(),
+			accId:'3070120160906001',
+			preAmount:47.74,
+			rechargeDate:date.format('yy-MM-ddThh:mm:ss'),
+			page:1,
+			start:0,
+			limit:25
+		}, function (data) {
+			console.log(data)
+		})
+	})
+</script>
+</html>
